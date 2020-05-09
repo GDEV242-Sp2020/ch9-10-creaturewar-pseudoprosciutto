@@ -36,31 +36,35 @@ public void action()
     {
         if (!hasSecondWord()) { // no second word
             System.out.println("Add to which army? Try: addunit <army#>");
-            System.out.println("Army options: army1, army2");
+            System.out.println("Army options: army1, army2, all");
             return;
         }   
         Parser parser = new Parser();
-        int soldierNum = -1; //-1 will be invalid
+        
         
         switch(getSecondWord().toLowerCase())
         {
             case "army1" :
             System.out.println("Roster to choose unit:");
-            World().listArmy(1);
-            System.out.println("Enter soldier number to delete unit from army.");
-            soldierNum = parser.askInt();
+            World().listValidCreatures();
+            System.out.println("Enter soldier number to add unit to army.");
+            int soldierTypeSelect = parser.askInt();
             
-            World().removeCreature(1,soldierNum);
+            World().createCreature(1,CreatureType(soldierTypeSelect).getType()); //string value of type located in creature subclass
           
             break;
             
             case "army2" :
             System.out.println("Roster to choose unit:");
             World().listArmy(2);
-            System.out.println("Enter soldier number to delete unit from army.");
-            soldierNum = parser.askInt();
-            World().removeCreature(2,soldierNum);
+            System.out.println("Enter soldier number to add unit from army.");
+            soldierTypeSelect = parser.askInt();
+           // World().removeCreature(2,soldierType);
             break;
+            
+            case "all":
+            System.out.println("");
+            
             
             default :
             System.out.println("Not Recognized Command. Remove from which army? Try: subunit <army#>");
@@ -74,6 +78,9 @@ public void action()
             System.out.println("");
         }        
     }
-    
+    private Creature CreatureType(int selection)
+    {
+        return World().SelectCreature(selection);
+    }
 
 }

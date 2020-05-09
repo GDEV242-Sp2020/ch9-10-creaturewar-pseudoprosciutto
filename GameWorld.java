@@ -10,6 +10,7 @@ public class GameWorld
     private  ArrayList<Creature> Creatures;
     private  ArrayList<Creature> Army1;
     private  ArrayList<Creature> Army2;
+
     //private ArrayList<Creature> unassignedCreatures;
 
     public GameWorld()
@@ -21,10 +22,22 @@ public class GameWorld
         ArrayList<Creature> Army1 = new ArrayList<Creature>();
         ArrayList<Creature> Army2 = new ArrayList<Creature>();
         System.out.println("GameWorld init");
-        //createValidCreatures();
+        
+        createValidCreatures();
+      
+
+        
     }
 
     //CREATURE MECHANICS
+    /**
+     * Gets creature from prefab list of valid creatures to be referenced and compared to.
+     */
+    public Creature SelectCreature(int selection)
+    {
+        return Creatures.get(selection);
+    }
+    
     /**
      * get creature
      * @param int from army number
@@ -53,21 +66,40 @@ public class GameWorld
             System.out.println("Invalid get, Army does not exist.");
         }
         System.out.println("Invalid get, creature does not exist in this army.");
-            return null;            
-        }
-        
-        
-    
+        return null;            
+    }
 
+    /**
+     * Clears all the dead units from the battle field.
+     */
+    private void clearDead()
+    {
+        for(Creature creature : Army1)
+        {
+            if(creature.IsAlive() ==false)
+            Army1.remove(creature);
+        }
+                for(Creature creature : Army1)
+        {
+            if(creature.IsAlive() ==false)
+            Army1.remove(creature);
+        }
+    }
+    
     /** Create instances to add a registry of all valid creatures - purposely unformatted because blueJ doesnt fold regions  **/
     private void createValidCreatures(){Creatures.add(new Human());        Creatures.add(new Balrog());        Creatures.add(new CyberDemon());        Creatures.add(new Demon());        Creatures.add(new Elf());    }    
 
+    public boolean isValidCreature(){
+        return true;
+    }
+    
     public void listValidCreatures()
     {
-        for (Creature creature : Creatures)
+        int n=0;
+       for (Creature creature : Creatures)
         {
-            String name = creature.getName();
-            System.out.println(name);
+            System.out.println(n+" " + creature.getType());
+            n++;
         }
     }
 
@@ -118,7 +150,11 @@ public class GameWorld
             break;
         }
     }
-
+    /**
+     * remove a specific creature
+     * @param armyNumber int which army
+     * @param rosterNumber int creature's roster number in army
+     */
     public void removeCreature(int armyNumber, int rosterNumber)
     {
         switch (armyNumber)
@@ -135,7 +171,6 @@ public class GameWorld
             System.out.println("Not a valid choice.");
             break;            
         }
-
     }
 
     /**
@@ -143,7 +178,7 @@ public class GameWorld
      * Creates a creature
      * @param 
      */
-    public void createCreature(String creatureType, int forArmy)
+    public void createCreature(int forArmy, String creatureType)
     {
         Creature creature = NewCreature(creatureType);
         System.out.println("Created a "+creature.printString()+ ".");
@@ -199,14 +234,78 @@ public class GameWorld
         return null;
     }       
 
+    /**
+    *Engage in battle rounds until there are no more units standing in one or both armies. 
+    *only all of the smallest army's units fight. the other army keeps units uncontested as back up until rosters align.
+    *creatures with equal roster placement in opposite armies fight each other until roster order changes.
+    */
     public void EngageArmies()
     {
-        Battle();
+        String report = "";
+        
+        //attack wave
+        while(Army2.size()>0 && Army2.size()>0) //each iteration is an attack wave/ round of battle.
+        { 
+            for(int i = 0; i < getArmy(getSmallestArmy()).size(); i++ ){
+                Creature army1Unit = Army1.get(i);
+                Creature army2Unit = Army2.get(i);
+                Fight(army1Unit, army2Unit);
+            }
+            //whenever enemies die in round of battle they are set to dead. This clears the field before restarting cycle.
+            clearDead();
+        }
+        
     }
+    
+    private void Fight(Creature c1, Creature c2)
+    {
+        int c1Dmg = c1.getDamage();
+        c2.Hurt(c1Dmg);
+        System.out.println("Army1's "+ c1.getType() +" does "+ c1Dmg +" to Army2's " + c2.getType());
 
+        int c2Dmg = c2.getDamage();
+        c1.Hurt(c2Dmg);
+        System.out.println("Army1's "+ c1.getType() +" does "+ c1Dmg +" to Army2's " + c2.getType());
+
+        if(c1.IsAlive() == false){
+            System.out.println("Army1's "+ c1.getType() +" has died");
+        }
+        if(c2.IsAlive() == false){
+            System.out.println("Army2's "+ c2.getType() +" has died");
+        }
+        
+    }
+    
     private void Battle()
     {
         System.out.println("Armies be engaging. All the maths will be here.");
-        System.out.println("Outcome: ");
+        System.out.println("Outcome: " + BattleReport());
+    }
+
+    private ArrayList<Creature> getArmy(int num)
+    {
+        switch (num){
+            case 1:
+            return Army1;
+            case 2:
+            return Army2;
+            default:
+            System.out.println("Invalid GetArmy call. Army doesnt exist.");
+        }
+        return null;
+    }
+
+    private int getSmallestArmy()
+    {
+        //compare army sizes and return smallest
+        if (Army1.size()>Army2.size())
+            return 1;
+        else //armies are same size or 2 is smallest 
+            return 2;
+    }
+
+    private String BattleReport()
+    {
+        return "battleReport";
     }
 }

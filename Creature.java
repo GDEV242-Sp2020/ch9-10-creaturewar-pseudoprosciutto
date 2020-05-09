@@ -46,27 +46,27 @@ public abstract class Creature
    {
     return description;
     }
-   public int damage()
+    
+   public int getDamage()
    {
        int randomDamage = 1 + (random.nextInt(strength.Amt()));
        return randomDamage;// a random number between 1 and strength`
    }
    
-   public boolean isAlive() 
-   {
-       // if hitpoints > 0`
-     return true;
-   }
    
    //health commands
-   public int heal(int num)
+   public int Heal(int num)
    {
     return health.Heal(num);   
     }
     
-   public int hurt(int num)
+   public int Hurt(int num)
    {
-       return health.Hurt(num);
+       
+       if(health.Amt() <= 0){
+           isAlive = false;
+        }
+        return health.Hurt(num);
    }
    
    public boolean IsAlive()
