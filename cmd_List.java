@@ -7,5 +7,10 @@
  */
 public class cmd_List extends Command
 {
-
+    public cmd_List()
+    {
+    }
+    public void action()
+    {
+    }
 }

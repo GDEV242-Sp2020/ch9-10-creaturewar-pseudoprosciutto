@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Attribute
+comment0.text=\r\n\ Parent\ class\ of\ all\ attributes\r\n\r\n\ @author\ Matthew\ Sheehan\r\n\ @version\ 05/08/2020\r\n
+comment1.params=
+comment1.target=int\ Amt()
+numComments=2

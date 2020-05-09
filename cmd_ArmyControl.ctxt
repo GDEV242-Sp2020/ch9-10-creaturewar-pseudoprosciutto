@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=cmd_ArmyControl
+comment0.text=\r\n\ Army\ Control\ commands\r\n
+comment1.params=
+comment1.target=cmd_ArmyControl()
+comment1.text=\r\n\ Constructor\r\n\ @Param\ Player\ the\ current\ player\r\n
+comment2.params=
+comment2.target=GameWorld\ World()
+comment3.params=
+comment3.target=void\ action()
+comment3.text=\r\n\ Look\ at\ something\ specific\ and\ print\ description\r\n\ \r\n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \r\n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\r\n
+numComments=4

@@ -19,7 +19,12 @@ public class cmd_RemoveUnit extends Command
     
     }
     
-    
+        //gameworld access
+    private GameWorld World()
+    {
+        _GameWorld = Game.gameworld();;
+        return _GameWorld;
+    }
     /**
      * Picks up an item from the room if the item can be held
      * 
@@ -29,34 +34,43 @@ public class cmd_RemoveUnit extends Command
 public void action() 
     {
         if (!hasSecondWord()) { // no second word
-            System.out.println("Remove from which army?");
-            System.out.println("Try: sub
+            System.out.println("Remove from which army? Try: subunit <army#>");
+            System.out.println("Army options: army1, army2");
             return;
-        }     
-
-        // if (item != null && player.haveItem(item)) { //item is held - redundant check
-            // player.dropItem(item);
-            // room.addItem(item);
+        }   
+        Parser parser = new Parser();
+        int soldierNum = -1; //-1 will be invalid
+        
+        switch(getSecondWord().toLowerCase())
+        {
+            case "army1" :
+            System.out.println("Roster to choose unit:");
+            World().listArmy(1);
+            System.out.println("Enter soldier number to delete unit from army.");
+            soldierNum = parser.askInt();
             
-        // }
-        // else {
-            // System.out.println("Can't find item to drop");
-        // } 
-        Room room = player.getCurrentRoom();
-        Items item = player.getItem(getSecondWord());
-        if (item != null) {
-            if (player.dropItem(item)) { //returns true and item is picked up
-                room.addItem(item);
-                System.out.println("You removed the " +item.getName() +" from your possessions.");
-                System.out.println("You now have space to hold "+ player.numSpaceLeft() +" more items.");
-            }
-            else {
-                System.out.println("You cannot drop this!");
-            }
+            World().removeCreature(1,soldierNum);
+          
+            break;
+            
+            case "army2" :
+            System.out.println("Roster to choose unit:");
+            World().listArmy(2);
+            System.out.println("Enter soldier number to delete unit from army.");
+            soldierNum = parser.askInt();
+            World().removeCreature(2,soldierNum);
+            break;
+            
+            default :
+            System.out.println("Not Recognized Command. Remove from which army? Try: subunit <army#>");
+            System.out.println("Command options: army1, army2");
+            break;
+        }
+        int i =0;
+        if (i==1) {
         }
         else {
-            System.out.println("Drop what? (try: drop <item> - make sure its something you're carrying");
+            System.out.println("");
         }        
     }
-    
 }

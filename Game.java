@@ -8,7 +8,7 @@ import java.util.*;
 public class Game
 {
     // instance variables - replace the example below with your own
-    private GameWorld CreatureWarSimulation;
+    private static GameWorld CreatureWarSimulation;
     //input command prompt
     public Parser parser;    
     
@@ -34,9 +34,8 @@ public class Game
         commands.addCommand("quit", new cmd_Quit()); 
         commands.addCommand("help", new cmd_Help(commands));
         commands.addCommand("army",new cmd_ArmyControl());
-        commands.addCommand("make", new cmd_Create());
-        commands.addCommand("remove", new cmd_RemoveUnit());
-        commands.addCommand("list". new cmd_List());
+        commands.addCommand("addUnit", new cmd_Create());
+        commands.addCommand("subUnit", new cmd_RemoveUnit());
         //commands.addCommand("test", new cmd_Test);
     }    
     
@@ -57,6 +56,8 @@ public class Game
             // execute them until the game is over.
         boolean finished = false;
             while (! finished) {
+                
+                //might need to send this instance when creating a command but not sure
                 
                 Command command = parser.getCommand(); // gets new command
                 
@@ -90,6 +91,13 @@ public class Game
     {
         wantToQuit = true;
     }
-    
+
+    /**
+     * allows access to the one instance of the gameworld
+     */
+    public static GameWorld gameworld()
+    {
+        return CreatureWarSimulation;
+    }
     
 }

@@ -85,4 +85,18 @@ public class Parser
     {
         return commands;
     }
+    
+    public int askInt()
+    {
+        System.out.print("> ");     // print prompt
+        int newInt = reader.nextInt();
+        return newInt;
+    }
+    public String askString()
+    {
+        
+        System.out.print("> ");     // print prompt
+        String newString = reader.nextLine();
+        return newString;
+    }
 }

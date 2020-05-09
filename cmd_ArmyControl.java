@@ -17,7 +17,11 @@ public class cmd_ArmyControl extends Command
         
     }
     
-    
+            private GameWorld World()
+    {
+        _GameWorld = Game.gameworld();;
+        return _GameWorld;
+    }
     /**
      * Look at something specific and print description
      * 
@@ -32,23 +36,19 @@ public class cmd_ArmyControl extends Command
             // look around the room
             
             System.out.println("please finish command. army <command>");
-            System.out.println("Commands: engage,");                    
+            System.out.println("Commands: engage/battle");                    
             return;
         }
         
-        String secondWord = getSecondWord();         // Object name to search what to describe
-        if(secondWord.equals("engage"))
-        {
-            
-        }       
-    }
-    
-    /**
-     * Look at the room for an item with the given name and
-     * show its description.
-     * @return true if the item is found or false if it's not.
-     */
-    private boolean canDescribeItem(String name)
-    {
         
+        switch(getSecondWord().toLowerCase()) //force string to be lowercase here in case it wasnt done before
+        {
+        case "engage" :
+        case "fight"  :
+        case "battle" :        
+        World().EngageArmies();
+        break;
+    }
+    }
+    //Creaure
 }
