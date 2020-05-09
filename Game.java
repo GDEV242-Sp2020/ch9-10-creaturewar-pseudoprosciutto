@@ -32,7 +32,12 @@ public class Game
     {
         CommandWords commands = parser.getCommands();
         commands.addCommand("quit", new cmd_Quit()); 
-        commands.addCommand("help", new cmd_Help(commands));          
+        commands.addCommand("help", new cmd_Help(commands));
+        commands.addCommand("army",new cmd_ArmyControl());
+        commands.addCommand("make", new cmd_Create());
+        commands.addCommand("remove", new cmd_RemoveUnit());
+        commands.addCommand("list". new cmd_List());
+        //commands.addCommand("test", new cmd_Test);
     }    
     
     private void printWelcome()

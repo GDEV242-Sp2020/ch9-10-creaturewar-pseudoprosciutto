@@ -10,13 +10,14 @@ public class GameWorld
     private ArrayList<Creature> Creatures;
     private ArrayList<Creature> Army1;
     private ArrayList<Creature> Army2;
-    
+    private ArrayList<Creature> unassignedCreatures;
     
     public GameWorld()
     {
         //master list of valid creatures
-        ArrayList<Creature> unassignedCreatures = new ArrayList<Creature>();
         ArrayList<Creature> Creatures = new ArrayList<Creature>();
+        ArrayList<Creature> unassignedCreatures = new ArrayList<Creature>(); //should be redundant.
+
         ArrayList<Creature> Army1 = new ArrayList<Creature>();
         ArrayList<Creature> Army2 = new ArrayList<Creature>();
         System.out.println("GameWorld init");
@@ -25,7 +26,9 @@ public class GameWorld
     
     //CREATURE MECHANICS
     /**
+     * 
      * Create instances to Add a registry of all valid creatures 
+     * 
      */
     private void createValidCreatures()
     {

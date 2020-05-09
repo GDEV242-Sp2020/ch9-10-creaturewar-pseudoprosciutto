@@ -3,8 +3,8 @@
  * Take command picks up an item from the room and adds it to the player's inventory.
  * The player can then move from room to room still having access to that item until dropped.
  *
- * @author Matthew Sheehan, Marcelle Tamegnon
- * @version 03/23/2020
+ * @author Matthew Sheehan, 
+ * @version 05/8/2020
  */
 public class cmd_RemoveUnit extends Command
 {
@@ -29,7 +29,8 @@ public class cmd_RemoveUnit extends Command
 public void action() 
     {
         if (!hasSecondWord()) { // no second word
-            System.out.println("Drop what? (try: drop <item> - Item must be in your inventory)");
+            System.out.println("Remove from which army?");
+            System.out.println("Try: sub
             return;
         }     
 
