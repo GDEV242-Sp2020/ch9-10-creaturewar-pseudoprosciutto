@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=CommandWords
+comment0.text=\r\n\ A\ map\ of\ all\ the\ command\ words\ in\ the\ game\ is\ held\ here.\r\n\r\n\ @author\ Matthew\ Sheehan\r\n\ @version\ 5/8/2020\r\n
+comment1.params=
+comment1.target=CommandWords()
+comment1.text=\r\n\ Constructor\ for\ object\ CommandWords\ which\ will\ hold\ all\ the\ validCommands\ added\ at\ game\ start.\r\n\ no\ longer\ found\ in\ an\ enum\ as\ old/base\ versions\ had.\r\n
+comment2.params=commandWord
+comment2.target=Command\ getCommand(java.lang.String)
+comment2.text=\r\n\ Find\ the\ CommandWord\ associated\ with\ a\ command\ word.\r\n\ @param\ commandWord\ The\ word\ to\ look\ up.\r\n\ @return\ The\ CommandWord\ correspondng\ to\ commandWord,\ or\ a\ new\ Unknown\ command\ object\r\n\ \ \ \ \ \ \ \ \ if\ it\ is\ not\ a\ valid\ command\ word.\r\n
+comment3.params=aString
+comment3.target=boolean\ isCommand(java.lang.String)
+comment3.text=\r\n\ Check\ whether\ a\ given\ String\ is\ a\ valid\ command\ word.\ \r\n\ @return\ true\ if\ it\ is,\ false\ if\ it\ isn't.\r\n
+comment4.params=
+comment4.target=java.lang.String\ showAllString()
+comment4.text=\r\n\ Collects\ all\ valid\ commands\ to\ a\ String\r\n\ @return\ member\ String\ of\ all\ valid\ commands\r\n
+comment5.params=
+comment5.target=void\ showAll()
+comment5.text=\r\n\ Print\ all\ valid\ commands\ to\ System.out.\r\n
+comment6.params=keyWord\ associatedCommand
+comment6.target=void\ addCommand(java.lang.String,\ Command)
+comment6.text=\r\n\ Add\ command\ Map\ Items\ to\ validCommands\ to\ later\ be\ accessed\ by\ player.\r\n\ each\ command\ map\ item\ has\ key\ of\ a\ String\ and\ value\ of\ a\ Command\ object\r\n\ @param\ keyWord\ key\ String\ used\ to\ call\ the\ value\ Command\ type\ object\ in\ Map\ validCommands\r\n\ @param\ associatedCommand\ value\ Command\ type\ object\ in\ Map\ validCommands\r\n
+numComments=7
