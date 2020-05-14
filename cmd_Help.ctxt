@@ -2,8 +2,8 @@
 comment0.target=cmd_Help
 comment1.params=commands
 comment1.target=cmd_Help(CommandWords)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CommandUnkown\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ CommandUnkown\n
 comment2.params=
 comment2.target=void\ action()
-comment2.text=\r\n\ Action\ for\ cmd_Help\r\n\ Prints\ basic\ text\ for\ the\ player\ to\ know\ simple\ boundaries\ of\ the\ game.\r\n\ Lists\ out\ commands\ and\ explains\ surroundings.\r\n\ \r\n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \r\n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\r\n
+comment2.text=\n\ Action\ for\ cmd_Help\n\ Prints\ basic\ text\ for\ the\ player\ to\ know\ simple\ boundaries\ of\ the\ game.\n\ Lists\ out\ commands\ and\ explains\ surroundings.\n\ \n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\n
 numComments=3

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Human
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Human\ here.\r\nHUMAN**\r\n\r\n\ >a\ basic\ creature,\ max\ str(18)\ max\ hp(30),\ min\ str(5),\ min\ hp(10)\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Human\ here.\nHUMAN**\n\n\ >a\ basic\ creature,\ max\ str(18)\ max\ hp(30),\ min\ str(5),\ min\ hp(10)\n\ @author\ Matthew\ Sheehan\n\ @version\ \ 5/14/2020\n
 comment1.params=
 comment1.target=Human()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Human\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Human\n
 numComments=2

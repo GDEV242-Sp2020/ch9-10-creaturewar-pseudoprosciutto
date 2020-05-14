@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Elf
-comment0.text=\r\nELF**\u00A0\r\n\r\n>a\ magical\u00A0creature,\ max\ str(18)\ max\ hp(25),\ min\ str(5),\ min\ hp(8)\r\n\r\n>10%\ chance\ to\ do\ magical\ damage\ (2x\ damage\ returned),\ over\ ride\ the\ damage\ function\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\nELF**\u00A0\n\n>a\ magical\u00A0creature,\ max\ str(18)\ max\ hp(25),\ min\ str(5),\ min\ hp(8)\n\n>10%\ chance\ to\ do\ magical\ damage\ (2x\ damage\ returned),\ over\ ride\ the\ damage\ function\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=Elf()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Elf\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Elf\n
 numComments=2

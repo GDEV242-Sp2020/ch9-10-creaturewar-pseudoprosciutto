@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ValidCreatures
+comment0.text=\n\ Creates\ a\ list\ of\ all\ the\ valid\ creatures\ on\ instantiation.\ \n\ \n\ This\ can\ be\ done\ better\ but\ just\ want\ to\ get\ working\ first\n\n\ @author\ Matthew\ Sheehan\n\ @version\ 05/14/2020\n
+comment1.params=
+comment1.target=void\ getInfo()
+numComments=2

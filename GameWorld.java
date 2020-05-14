@@ -10,26 +10,43 @@ public class GameWorld
     private  ArrayList<Creature> Creatures;
     private  ArrayList<Creature> Army1;
     private  ArrayList<Creature> Army2;
-
-    //private ArrayList<Creature> unassignedCreatures;
+    private  List<ValidCreatures> validCreature;   //test valid creatures with enum list //should be redundant
+    //private ArrayList<Creature> unassignedCreatures; //maybe for future implementation
 
     public GameWorld()
     {
-        //master list of valid creatures
-        ArrayList<Creature> Creatures = new ArrayList<Creature>();
-        ArrayList<Creature> unassignedCreatures = new ArrayList<Creature>(); //should be redundant.
+        //Enum for master list of valid creatures
+        //ValidCreatures validCreature[] = ValidCreatures.values();
+        //ArrayList<Creature> Creatures = new ArrayList<Creature>();
+        
+        List<ValidCreatures> validCreature = Arrays.asList(ValidCreatures.values());
+                                        
+        //ArrayList<Creature> unassignedCreatures = new ArrayList<Creature>(); //should be redundant.
 
         ArrayList<Creature> Army1 = new ArrayList<Creature>();
         ArrayList<Creature> Army2 = new ArrayList<Creature>();
         System.out.println("GameWorld init");
-        
-        createValidCreatures();
-      
-
-        
+ 
     }
+    
+    
+    
 
+    
     //CREATURE MECHANICS
+    
+    /**
+     * prints all valid creatures using enum
+     * this is public so a command can access this.
+     */
+    public void printValidCreatures(){
+    for (ValidCreatures creature : validCreature) 
+        { 
+            // Calling ordinal() to find index 
+            System.out.println(creature + " at index "
+                             + creature.ordinal()); 
+        } 
+    }
     /**
      * Gets creature from prefab list of valid creatures to be referenced and compared to.
      */
@@ -86,8 +103,7 @@ public class GameWorld
         }
     }
     
-    /** Create instances to add a registry of all valid creatures - purposely unformatted because blueJ doesnt fold regions  **/
-    private void createValidCreatures(){Creatures.add(new Human());        Creatures.add(new Balrog());        Creatures.add(new CyberDemon());        Creatures.add(new Demon());        Creatures.add(new Elf());    }    
+  
 
     public boolean isValidCreature(){
         return true;

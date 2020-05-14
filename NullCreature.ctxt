@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=NullCreature
-comment0.text=\r\nThis\ Creature\ is\ a\ place\ holder\ for\ a\ creature\ that\ doesnt\ exist.\r\n\r\n\ @author\ Matthew\ Sheehan\r\n\ @version\ 05/09/2020\r\n
+comment0.text=\nThis\ Creature\ is\ a\ place\ holder\ for\ a\ creature\ that\ doesnt\ exist.\n\n\ @author\ Matthew\ Sheehan\n\ @version\ 05/09/2020\n
 comment1.params=
 comment1.target=NullCreature()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ NullCreature\r\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ NullCreature\n
 numComments=2

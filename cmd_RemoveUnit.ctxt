@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=cmd_RemoveUnit
-comment0.text=\r\n\ Take\ command\ picks\ up\ an\ item\ from\ the\ room\ and\ adds\ it\ to\ the\ player's\ inventory.\r\n\ The\ player\ can\ then\ move\ from\ room\ to\ room\ still\ having\ access\ to\ that\ item\ until\ dropped.\r\n\r\n\ @author\ Matthew\ Sheehan,\ \r\n\ @version\ 05/8/2020\r\n
+comment0.text=\n\ Take\ command\ picks\ up\ an\ item\ from\ the\ room\ and\ adds\ it\ to\ the\ player's\ inventory.\n\ The\ player\ can\ then\ move\ from\ room\ to\ room\ still\ having\ access\ to\ that\ item\ until\ dropped.\n\n\ @author\ Matthew\ Sheehan,\ \n\ @version\ 05/8/2020\n
 comment1.params=
 comment1.target=cmd_RemoveUnit()
-comment1.text=\r\n\ Constructor\r\n\ @param\ Player\ current\ player\r\n
+comment1.text=\n\ Constructor\n\ @param\ Player\ current\ player\n
 comment2.params=
 comment2.target=GameWorld\ World()
 comment3.params=
 comment3.target=void\ action()
-comment3.text=\r\n\ Picks\ up\ an\ item\ from\ the\ room\ if\ the\ item\ can\ be\ held\r\n\ \r\n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \r\n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\r\n
+comment3.text=\n\ Picks\ up\ an\ item\ from\ the\ room\ if\ the\ item\ can\ be\ held\n\ \n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\n
 numComments=4

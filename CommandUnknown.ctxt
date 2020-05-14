@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=CommandUnknown
-comment0.text=\r\n\ Command\ Unkown\ represents\ an\ action\ which\ is\ unknown\ to\ the\ game\ \r\n\ and\ returns\ a\ message\ to\ player\ saying\ this\ action\ does\ nothing\r\n\r\n\ @author\ Matthew\ Sheehan\r\n\ @version\ 5/8/2020\r\n
+comment0.text=\n\ Command\ Unkown\ represents\ an\ action\ which\ is\ unknown\ to\ the\ game\ \n\ and\ returns\ a\ message\ to\ player\ saying\ this\ action\ does\ nothing\n\n\ @author\ Matthew\ Sheehan\n\ @version\ 5/8/2020\n
 comment1.params=
 comment1.target=void\ action()
-comment1.text=\r\n\ Prints\ message\ saying\ the\ command\ entered\ is\ unknown\r\n\ \r\n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \r\n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\r\n
+comment1.text=\n\ Prints\ message\ saying\ the\ command\ entered\ is\ unknown\n\ \n\ This\ method\ performs\ the\ classes\ actions\ for\ Player\ in\ Game\ \n\ This\ abstract\ method\ from\ Command\ is\ contained\ in\ each\ command\ extension\n
 numComments=2

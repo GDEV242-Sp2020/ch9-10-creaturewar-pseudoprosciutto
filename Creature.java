@@ -17,17 +17,15 @@ public abstract class Creature
    private String printString;
    private String creatureType;
    private String description;
-   private boolean isAlive;
+   protected boolean isAlive;
    
    //instantiate random object for rng
    Random random = new Random();
 
-   public Creature()
-   {
-       Attribute health = new Health(10);
-       Attribute strength = new Strength(10);
-       isAlive = true;
-   }
+   // public Creature()
+   // {
+       
+   // }
 
    
    public String printString()

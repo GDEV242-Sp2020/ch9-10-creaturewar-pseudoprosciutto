@@ -4,8 +4,8 @@
  ***HUMAN**
 
  >a basic creature, max str(18) max hp(30), min str(5), min hp(10)
- * @author (your name)
- * @version (a version number or a date)
+ * @author Matthew Sheehan
+ * @version  5/14/2020
  */
 public class Human extends Creature
 {
@@ -16,7 +16,9 @@ public class Human extends Creature
      */
     public Human()
     {
-        
+        Attribute health = new Health(10);
+       Attribute strength = new Strength(10);
+       isAlive = true;
     }
 
 }

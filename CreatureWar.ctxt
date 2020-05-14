@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=CreatureWar
-comment0.text=\r\n\ Main\ Class\ to\ start\ application\r\n\ \r\n\ Creature\ war\ is\ a\ simulation\ where\ the\ user\ creates\ two\ armies\ consisting\ of\ different\ creatures\ which\ fight\ each\ other.\r\n\ Battle\ occurs\ upon\ command\ engage\ and\ the\ winner\ is\ listed\ as\ the\ army\ with\ creatures\ still\ alive\ after\ battle\r\n\r\n\ @author\ Matthew\ Sheehan\r\n\ @version\ 05/09/2020\r\n
+comment0.text=\n\ Main\ Class\ to\ start\ application\n\ \n\ Creature\ war\ is\ a\ simulation\ where\ the\ user\ creates\ two\ armies\ consisting\ of\ different\ creatures\ which\ fight\ each\ other.\n\ Battle\ occurs\ upon\ command\ engage\ and\ the\ winner\ is\ listed\ as\ the\ army\ with\ creatures\ still\ alive\ after\ battle\n\n\ @author\ Matthew\ Sheehan\n\ @version\ 05/09/2020\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment1.text=\r\n\ Launch\ Creature\ War\ Game\r\n
+comment1.text=\n\ Launch\ Creature\ War\ Game\n
 numComments=2
