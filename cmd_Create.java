@@ -28,7 +28,7 @@ public class cmd_Create extends Command
     
     /**
      * Add creature to GameWorld
-     * 
+     *  
      * This method performs the classes actions for Player in Game 
      * This abstract method from Command is contained in each command extension
      */
@@ -46,17 +46,17 @@ public void action()
         {
             case "army1" :
             System.out.println("Roster to choose unit:");
-            World().listValidCreatures();
+            World().ListValidCreatures();
             System.out.println("Enter soldier number to add unit to army.");
             int soldierTypeSelect = parser.askInt();
             
-            World().createCreature(1,CreatureType(soldierTypeSelect).getType()); //string value of type located in creature subclass
+            World().CreateCreature(1,CreatureType(soldierTypeSelect).getType()); //string value of type located in creature subclass
           
             break;
             
             case "army2" :
             System.out.println("Roster to choose unit:");
-            World().listArmy(2);
+            World().ListArmy(2);
             System.out.println("Enter soldier number to add unit from army.");
             soldierTypeSelect = parser.askInt();
            // World().removeCreature(2,soldierType);

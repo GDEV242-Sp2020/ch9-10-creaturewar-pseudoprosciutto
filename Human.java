@@ -16,9 +16,17 @@ public class Human extends Creature
      */
     public Human()
     {
+        System.out.println("new Human created");
         Attribute health = new Health(10);
        Attribute strength = new Strength(10);
        isAlive = true;
     }
+    
+    @Override
+    public void ability()
+    {
+        
+    }
+    
 
 }

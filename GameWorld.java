@@ -1,6 +1,7 @@
 import java.util.*;
 /**
- * Write a description of class GameWorld here.
+ * This is the world where the armies populate and wage war in. 
+ * 
  *
  * @author Matthew Sheehan
  * @version 05/08/2020
@@ -8,45 +9,71 @@ import java.util.*;
 public class GameWorld
 {
     private  ArrayList<Creature> Creatures;
-    private  ArrayList<Creature> Army1;
-    private  ArrayList<Creature> Army2;
+    private  ArrayList<Creature> worldArmy1 = new ArrayList<Creature>();
+    private  ArrayList<Creature> worldArmy2 = new ArrayList<Creature>();
     private  List<ValidCreatures> validCreature;   //test valid creatures with enum list //should be redundant
+   // private Populace populator;
     //private ArrayList<Creature> unassignedCreatures; //maybe for future implementation
 
     public GameWorld()
     {
-        //Enum for master list of valid creatures
-        //ValidCreatures validCreature[] = ValidCreatures.values();
-        //ArrayList<Creature> Creatures = new ArrayList<Creature>();
         
         List<ValidCreatures> validCreature = Arrays.asList(ValidCreatures.values());
                                         
         //ArrayList<Creature> unassignedCreatures = new ArrayList<Creature>(); //should be redundant.
-
-        ArrayList<Creature> Army1 = new ArrayList<Creature>();
-        ArrayList<Creature> Army2 = new ArrayList<Creature>();
-        System.out.println("GameWorld init");
- 
+       
+        //Populace populator = new Populace();
+        createGenericArmies();
     }
-    
-    
-    
-
-    
-    //CREATURE MECHANICS
     
     /**
-     * prints all valid creatures using enum
-     * this is public so a command can access this.
+     * creates generic armies
      */
-    public void printValidCreatures(){
-    for (ValidCreatures creature : validCreature) 
-        { 
-            // Calling ordinal() to find index 
-            System.out.println(creature + " at index "
-                             + creature.ordinal()); 
-        } 
+    private void createGenericArmies()
+    {
+        Creature balrog = new Balrog();
+        worldArmy1.add(new Human());
+        worldArmy2.add(balrog);
     }
+    
+    //In order to let populator do all the work the information needs to be sent between the two classes
+    // /**
+     // * update armies from populator
+     // */
+    // private void updateArmies()
+    // {
+        // worldArmy1.clear();
+        // worldArmy1.addAll(populator.getArmy1());
+        // worldArmy2.clear();
+        // worldArmy2.addAll(populator.getArmy2());
+    // }
+    
+    // /**
+     // * armies to be sent to child classes
+     // */
+    // protected ArrayList<Creature> getArmy1()
+    // {
+        // return worldArmy1;
+    // }
+    // protected ArrayList<Creature> getArmy2()
+    // {
+        // return worldArmy2;
+    // }
+    //CREATURE MECHANICS
+    
+    // /**
+     // * prints all valid creatures using enum
+     // * this is public so a command can access this.
+     // */
+    // public void printValidCreatures(){
+    // for (ValidCreatures creature : validCreature) 
+        // { 
+            // // Calling ordinal() to find index 
+            // System.out.println(creature + " at index "
+                             // + creature.ordinal()); 
+        // } 
+    // }
+    
     /**
      * Gets creature from prefab list of valid creatures to be referenced and compared to.
      */
@@ -62,20 +89,21 @@ public class GameWorld
      */
     public Creature getCreature(int fromArmy, int rosterNum)
     {
+        
         Creature creature;
         switch(fromArmy)
         {
             case 1:
-            if(Army1.indexOf(rosterNum) != -1)
+            if(worldArmy1.indexOf(rosterNum) != -1)
             {
-                creature = Army1.get(rosterNum);
+                creature = worldArmy1.get(rosterNum);
                 return creature;
             }
             break;
             case 2:
-            if(Army2.indexOf(rosterNum) != -1)
+            if(worldArmy2.indexOf(rosterNum) != -1)
             {
-                creature = Army2.get(rosterNum);
+                creature = worldArmy2.get(rosterNum);
                 return creature;
             }
             break;
@@ -91,25 +119,23 @@ public class GameWorld
      */
     private void clearDead()
     {
-        for(Creature creature : Army1)
+        for(Creature creature : worldArmy1)
         {
             if(creature.IsAlive() ==false)
-            Army1.remove(creature);
+            worldArmy1.remove(creature);
         }
-                for(Creature creature : Army1)
+                for(Creature creature : worldArmy1)
         {
             if(creature.IsAlive() ==false)
-            Army1.remove(creature);
+            worldArmy1.remove(creature);
         }
     }
     
-  
-
     public boolean isValidCreature(){
         return true;
     }
     
-    public void listValidCreatures()
+    public void ListValidCreatures()
     {
         int n=0;
        for (Creature creature : Creatures)
@@ -119,14 +145,18 @@ public class GameWorld
         }
     }
 
-    public void listArmy(int forArmy)
+    public void ListArmy(int forArmy)
     {
+       // ArrayList<Creature> worldArmy1 = populator.getArmy1();
+       // ArrayList<Creature> worldArmy2 = populator.getArmy2();
+
         int n;
         switch (forArmy)
         { 
             case 1:
             n = 0;
-            for(Creature creature : Army1)
+            System.out.println("Army 1 has in its roster:");
+            for(Creature creature : worldArmy1)
             {
                 n++;
                 System.out.println("Soldier "+n+": "+
@@ -136,7 +166,8 @@ public class GameWorld
             break;
             case 2:
             n = 0;
-            for(Creature creature : Army2)
+            System.out.println("Army 2 has in its roster:");
+            for(Creature creature : worldArmy2)
             {
                 n++;
                 System.out.println("Soldier "+n+": "+
@@ -146,7 +177,7 @@ public class GameWorld
             case -1: //print both armies
             n = 0;
             System.out.println("Army 1 has in its roster:");
-            for(Creature creature : Army1)
+            for(Creature creature : worldArmy1)
             {
                 n++;
                 System.out.println("Soldier "+n+": "+
@@ -154,7 +185,8 @@ public class GameWorld
 
             }
             n = 0;
-            for(Creature creature : Army2)
+            System.out.println("Army 2 has in its roster:");
+            for(Creature creature : worldArmy2)
             {
                 n++;
                 System.out.println("Soldier "+n+": "+
@@ -171,16 +203,16 @@ public class GameWorld
      * @param armyNumber int which army
      * @param rosterNumber int creature's roster number in army
      */
-    public void removeCreature(int armyNumber, int rosterNumber)
+    public void RemoveCreature(int armyNumber, int rosterNumber)
     {
         switch (armyNumber)
         {
             case 1 :
-            Army1.remove(rosterNumber);
+            worldArmy1.remove(rosterNumber);
             break;
 
             case 2 :
-            Army1.remove(rosterNumber);
+            worldArmy1.remove(rosterNumber);
             break;
 
             default:
@@ -192,9 +224,10 @@ public class GameWorld
     /**
      * 
      * Creates a creature
-     * @param 
+     * @param int for army
+     * @param String creature type
      */
-    public void createCreature(int forArmy, String creatureType)
+    public void CreateCreature(int forArmy, String creatureType)
     {
         Creature creature = NewCreature(creatureType);
         System.out.println("Created a "+creature.printString()+ ".");
@@ -202,11 +235,11 @@ public class GameWorld
         switch (forArmy)
         {
             case 1:
-            Army1.add(creature);
+            worldArmy1.add(creature);
             break;
 
             case 2:
-            Army2.add(creature);
+            worldArmy2.add(creature);
             break;
         }
     }
@@ -257,15 +290,16 @@ public class GameWorld
     */
     public void EngageArmies()
     {
+        System.out.println("Armies Engaging");
         String report = "";
         
         //attack wave
-        while(Army2.size()>0 && Army2.size()>0) //each iteration is an attack wave/ round of battle.
+        while(worldArmy2.size()>0 && worldArmy2.size()>0) //each iteration is an attack wave/ round of battle.
         { 
             for(int i = 0; i < getArmy(getSmallestArmy()).size(); i++ ){
-                Creature army1Unit = Army1.get(i);
-                Creature army2Unit = Army2.get(i);
-                Fight(army1Unit, army2Unit);
+                Creature worldArmy1Unit = worldArmy1.get(i);
+                Creature worldArmy2Unit = worldArmy2.get(i);
+                Fight(worldArmy1Unit, worldArmy2Unit);
             }
             //whenever enemies die in round of battle they are set to dead. This clears the field before restarting cycle.
             clearDead();
@@ -302,9 +336,9 @@ public class GameWorld
     {
         switch (num){
             case 1:
-            return Army1;
+            return worldArmy1;
             case 2:
-            return Army2;
+            return worldArmy2;
             default:
             System.out.println("Invalid GetArmy call. Army doesnt exist.");
         }
@@ -314,7 +348,7 @@ public class GameWorld
     private int getSmallestArmy()
     {
         //compare army sizes and return smallest
-        if (Army1.size()>Army2.size())
+        if (worldArmy1.size()>worldArmy2.size())
             return 1;
         else //armies are same size or 2 is smallest 
             return 2;

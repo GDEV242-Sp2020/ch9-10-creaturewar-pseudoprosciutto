@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=cmd_List
-comment0.text=\n\ Write\ a\ description\ of\ class\ cmd_List\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ List\ Commands.\ List\ armies,\ List\ valid/creatures,\ \n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=cmd_List()
 comment2.params=
-comment2.target=void\ action()
-numComments=3
+comment2.target=GameWorld\ World()
+comment3.params=
+comment3.target=void\ action()
+numComments=4

@@ -18,7 +18,7 @@ public class cmd_RemoveUnit extends Command
     {
     
     }
-    
+     
         //gameworld access
     private GameWorld World()
     {
@@ -45,20 +45,20 @@ public void action()
         {
             case "army1" :
             System.out.println("Roster to choose unit:");
-            World().listArmy(1);
+            World().ListArmy(1);
             System.out.println("Enter soldier number to delete unit from army.");
             soldierNum = parser.askInt();
             
-            World().removeCreature(1,soldierNum);
+            World().RemoveCreature(1,soldierNum);
           
             break;
             
             case "army2" :
             System.out.println("Roster to choose unit:");
-            World().listArmy(2);
+            World().ListArmy(2);
             System.out.println("Enter soldier number to delete unit from army.");
             soldierNum = parser.askInt();
-            World().removeCreature(2,soldierNum);
+            World().RemoveCreature(2,soldierNum);
             break;
             
             default :

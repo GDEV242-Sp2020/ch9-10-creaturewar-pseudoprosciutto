@@ -17,11 +17,12 @@ public class cmd_ArmyControl extends Command
         
     }
     
-            private GameWorld World()
+    private GameWorld World()
     {
-        _GameWorld = Game.gameworld();;
+        _GameWorld = Game.gameworld();
         return _GameWorld;
     }
+    
     /**
      * Look at something specific and print description
      * 
@@ -31,6 +32,7 @@ public class cmd_ArmyControl extends Command
     public void action() 
     {
 
+         GameWorld World = Game.gameworld(); //this is a test to see where the error is with loading roster. 
         
         if (!hasSecondWord()) {
             // look around the room
@@ -43,6 +45,15 @@ public class cmd_ArmyControl extends Command
         
         switch(getSecondWord().toLowerCase()) //force string to be lowercase here in case it wasnt done before
         {
+        case "list":
+        World.ListArmy(-1);
+        break;
+        case "list1":
+        World().ListArmy(1);
+        break;
+        case "list2":
+        World().ListArmy(2);
+        break;
         case "engage" :
         case "fight"  :
         case "battle" :        

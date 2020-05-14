@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=Creature
-comment0.text=\n\ Write\ a\ description\ of\ class\ Creature\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Abstract\ creature\ class\ which\ all\ creatures\ are\ based\ off\ of\n\ \n\ @author\ Matthew\ Sheehan\ \n\ @version\ 05/05/2020\n
 comment1.params=
 comment1.target=java.lang.String\ printString()
+comment10.params=
+comment10.target=void\ ability()
 comment2.params=
 comment2.target=java.lang.String\ getType()
 comment3.params=
@@ -17,4 +19,6 @@ comment7.params=num
 comment7.target=int\ Hurt(int)
 comment8.params=
 comment8.target=boolean\ IsAlive()
-numComments=9
+comment9.params=
+comment9.target=void\ randomizeStats()
+numComments=11

@@ -41,8 +41,7 @@ public class Game
     
     private void printWelcome()
     {
-        System.out.println("Welcome to creature war simulation. \n"
-        + "To begin simulation, type commands.\n"
+        System.out.println("Welcome to creature war simulation. To begin simulation, type commands.\n"
         + "Type Help to list all commands at any time.");
         
     }

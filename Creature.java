@@ -1,14 +1,13 @@
 //import java.util.*;
 import java.util.Random;
 /**
- * Write a description of class Creature here.
+ * Abstract creature class which all creatures are based off of
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Matthew Sheehan 
+ * @version 05/05/2020
  */
 public abstract class Creature
 {
-   private int hp = 10;
 
 //   private int minStrength= 5;
    private Health health;
@@ -22,24 +21,26 @@ public abstract class Creature
    //instantiate random object for rng
    Random random = new Random();
 
+   //constructor?
    // public Creature()
    // {
        
    // }
-
-   
    public String printString()
    {
-   return getName() + " with " +hp +" HP and "+  strength + "Strength";
+   return getName() + " with " +health.Amt() +" HP and "+  strength.Amt() + "Strength";
    }
+   
    public String getType()
    {
        return creatureType;
    }
+   
    public String getName()
    {
     return name;
     }
+    
    public String getDescription()
    {
     return description;
@@ -60,7 +61,6 @@ public abstract class Creature
     
    public int Hurt(int num)
    {
-       
        if(health.Amt() <= 0){
            isAlive = false;
         }
@@ -71,4 +71,16 @@ public abstract class Creature
    {
    return isAlive;
    }
+   
+   public void randomizeStats()
+   {
+       health.randomize();
+       strength.randomize();
+    }
+   
+    //will be overridden in class
+   public void ability()
+   {
+       System.out.println("default unit ability");
+    }
 }

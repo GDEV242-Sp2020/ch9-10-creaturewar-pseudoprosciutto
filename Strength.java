@@ -2,25 +2,25 @@
 /**
  * Strength Attribute
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Matthew Sheehan
+ * @version 05/14/2020
  */
 public class Strength extends Attribute
 {
-    // current amount
-    private int amt;
+
 
     /**
-     * Constructor for objects of class Strength
+     * Create strength module setting maximum strength to the parameter value and the current amt to the maximum value.
      */
     public Strength(int Total)
     {
-        amt = Total;
+        if(Total < 1 ) Total = 1;
+        max = Total;
+        amt = max;
     }
 
-    public int Amt()
+    public void randomize()
     {
-        // put your code here
-        return amt;
+        amt = 1 + random.nextInt(max);
     }
 }

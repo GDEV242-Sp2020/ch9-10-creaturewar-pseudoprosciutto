@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Strength
-comment0.text=\n\ Strength\ Attribute\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Strength\ Attribute\n\n\ @author\ Matthew\ Sheehan\n\ @version\ 05/14/2020\n
 comment1.params=Total
 comment1.target=Strength(int)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Strength\n
+comment1.text=\n\ Create\ strength\ module\ setting\ maximum\ strength\ to\ the\ parameter\ value\ and\ the\ current\ amt\ to\ the\ maximum\ value.\n
 comment2.params=
-comment2.target=int\ Amt()
+comment2.target=void\ randomize()
 numComments=3
